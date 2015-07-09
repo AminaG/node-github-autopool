@@ -2,7 +2,13 @@
 	"repositories":
 	[{
 	"full_name":"AminaG/Webpage-Screenshot",
+	"branch":"master",
 	"directory":"c:\\git\\Webpage-Screenshot"
+	},
+	{
+	"full_name":"AminaG/node-github-autopool",
+	"branch":"master",
+	"directory":"c:\\git\\node-github-autopool"
 	}],
 "notification":{
 	"success":"https://zapier.com/hooks/catch/bg0hw1/",

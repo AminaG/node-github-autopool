@@ -1,23 +1,22 @@
 var request=require('request')
 expect=require('chai').expect
-should=require('chai').should
-var should=require('chai').should
-var httpMocks = require('node-mocks-http');
 var server=require('../server.js');
 var settings=require('../settings.js')();
 
 var port=parseInt(Math.random()*1000)+40000
 server.listen(port)
 
-var mockRequest=function(){
+var mockRequest=function(options,callback){
 	arguments[0].url='http://127.0.0.1:' + port + arguments[0].url
-	request.apply(request,arguments)
+	request(options,callback)
+	// callback()
 }
 
 
 describe('test understand the webhook',function(){
 	it('here',function(done){
 		expect(1).to.equal(1);
+		// done()
 		mockRequest({
 			url:'/?a=b',
 			headers:{
@@ -43,20 +42,19 @@ describe('testing pulling specific branch',function(){
 	this.timeout(10000);
 	it('test pool branch not exists',function(done){
 		require('../pool.js')('c:\\git\\webpage-screenshot','maste',function(err,body){
-			expect(err).to.be.null;
+			expect(err).to.not.null;
 			done();
 		})
 	})
 	it('test pool branch exists',function(done){
 		require('../pool.js')('c:\\git\\webpage-screenshot','master',function(err,body){
-			console.log(err)
-			expect(err).to.not.null;
+			expect(err).to.be.null;
 			done();
 		})
 	})
 })
 
-describe.only('test pushed-branch',function(){
+describe('test pushed-branch',function(){
 	this.timeout(10000)
 	it('existsBranchPush',function(done){
 		server.branchPushed('AminaG/Webpage-Screenshot','master',function(err){

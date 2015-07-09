@@ -6,14 +6,22 @@ settings=require('./settings.js')()
 
 app.use('/',require('body-parser').json())
 app.use('/',function(req,res){
-	var branch=req.body.ref.replace(/.*\/(.*)/,'$1')
-	var url=req.body.repository.full_name;
+	var branch=req && req.body && req.body.ref && req.body.ref.replace(/.*\/(.*)/,'$1')
+	if(!branch) {
+		res.end();
+		return;
+	}
+	var url=req.body && req.body.repository.full_name;
+	if(!url){
+		res.end();
+		return;
+	}
 	res.write(JSON.stringify({
 		branch:branch,
 		url:url
 	}));
+	module.exports.branchPushed(url,branch,function(){})
 	res.end()
-	branchPushed(url,branch)
 })
 
 module.exports.listen=function(port,ip){
@@ -21,9 +29,11 @@ module.exports.listen=function(port,ip){
 }
 
 module.exports.branchPushed=function(url,branch,callback){
-	console.log('pushed branch:',url,branch);
 	for(var i=0;i<settings.repositories.length;i++){
-		if (settings.repositories[i].full_name.toLowerCase()==url.toLowerCase()){
+		if (
+			settings.repositories[i].full_name.toLowerCase()==url.toLowerCase() &&
+			settings.repositories[i].branch.toLowerCase()==branch.toLowerCase()
+		){
 			var pool=require('./pool.js')(settings.repositories[i].directory,branch,function(err,stdin,stdout){
 				console.log(new Date(),stdout)
 				if(err && settings.notification.error){

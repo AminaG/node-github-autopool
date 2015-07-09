@@ -10,3 +10,6 @@ server.listen(settings.port || 80,settings.ip)
 // 			expect(body.to.equal('b'))
 // 			done()
 // 		})
+
+console.log('Waiting for pooling')
+console.log(settings)
