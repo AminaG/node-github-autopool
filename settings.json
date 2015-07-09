@@ -1,0 +1,13 @@
+{
+	"repositories":
+	[{
+	"full_name":"AminaG/Webpage-Screenshot",
+	"directory":"c:\\git\\Webpage-Screenshot"
+	}],
+"notification":{
+	"success":"https://zapier.com/hooks/catch/bg0hw1/",
+	"error":"https://zapier.com/hooks/catch/bg0hw1/"
+},
+"email":"aminadavg@gmail.com"
+}
+

@@ -1,0 +1,21 @@
+{
+  "name": "node-github-autopool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.1",
+    "stdio": "^0.2.7"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocka": "0.0.1",
+    "node-mocks-http": "^1.4.3",
+    "supertest": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
