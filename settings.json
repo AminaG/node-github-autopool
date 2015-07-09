@@ -1,9 +1,9 @@
 {
 	"repositories":
 	[{
-	"full_name":"AminaG/Webpage-Screenshot",
-	"branch":"master",
-	"directory":"c:\\git\\Webpage-Screenshot"
+	"full_name":"aminag/rg",
+	"branch":"dev",
+	"directory":"d:\\rg-dev"
 	},
 	{
 	"full_name":"AminaG/node-github-autopool",

@@ -1,11 +1,13 @@
 {
   "name": "node-github-autopool",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "app.js",
   "dependencies": {
     "express": "^4.13.1",
-    "stdio": "^0.2.7"
+    "stdio": "^0.2.7",
+    "request": "~2.58.0",
+    "body-parser": "~1.13.2"
   },
   "devDependencies": {
     "chai": "^3.0.0",
@@ -18,8 +20,8 @@
   },
   "author": "",
   "license": "ISC",
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/AminaG/node-github-autopool"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AminaG/node-github-autopool"
   }
 }

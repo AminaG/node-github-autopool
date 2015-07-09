@@ -1,5 +1,6 @@
 var request=require('request')
-expect=require('chai').expect
+var expect=require('chai').expect
+var assert = require('chai').assert
 var server=require('../server.js');
 var settings=require('../settings.js')();
 
@@ -32,7 +33,7 @@ describe('test understand the webhook',function(){
 
 			expect(err).to.be.null;
 			expect(body).to.be.object;
-			expect(body).to.deep.equal({branch:'master',url:'AminaG/Webpage-Screenshot'});
+			expect(body).to.deep.equal({branch:settings.repositories[0].branch,url:settings.repositories[0].full_name});
 			done()
 		})
 	})
@@ -41,14 +42,14 @@ describe('test understand the webhook',function(){
 describe('testing pulling specific branch',function(){
 	this.timeout(10000);
 	it('test pool branch not exists',function(done){
-		require('../pool.js')('c:\\git\\webpage-screenshot','maste',function(err,body){
+		require('../pool.js')(settings.repositories[0].directory,'maste',function(err,body){
 			expect(err).to.not.null;
 			done();
 		})
 	})
 	it('test pool branch exists',function(done){
-		require('../pool.js')('c:\\git\\webpage-screenshot','master',function(err,body){
-			expect(err).to.be.null;
+		require('../pool.js')(settings.repositories[0].directory,settings.repositories[0].branch,function(err,body){
+			assert.notOk(err,err);
 			done();
 		})
 	})
@@ -57,14 +58,14 @@ describe('testing pulling specific branch',function(){
 describe('test pushed-branch',function(){
 	this.timeout(10000)
 	it('existsBranchPush',function(done){
-		server.branchPushed('AminaG/Webpage-Screenshot','master',function(err){
-			expect(err).to.not.exist;
+		server.branchPushed(settings.repositories[0].full_name,settings.repositories[0].branch,function(err){
+			assert.notOk(err,err && (err.message + err.stack))
 			done();
 		})
 	})
 	it('not-existsBranchPush',function(done){
 		server.branchPushed('notexist','asd',function(err){
-			expect(err).to.be.exist;
+			assert.ok(err)
 			done()
 		})
 	})
