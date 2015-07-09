@@ -1,6 +1,6 @@
 {
   "name": "node-github-autopool",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "",
   "main": "app.js",
   "dependencies": {
@@ -20,6 +20,6 @@
   "license": "ISC",
   "repository" :
   { "type" : "git"
-  , "url" : "https://github.com/npm/npm.git"
+  , "url" : "https://github.com/AminaG/node-github-autopool"
   }
 }
