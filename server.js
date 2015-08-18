@@ -37,34 +37,42 @@ module.exports.branchPushed=function(url,branch,callback){
 			var pool=require('./pool.js')(settings.repositories[i].directory,branch,function(err,stdin,stdout){
 				console.log(new Date(),stdout)
 				if(err && settings.notification.error){
-					request.post({
-						url:settings.notification.error,
-						json:{
-							subject:'error:' + url + ' ,' + branch,
-							body:stdout,
-							from:'node-github-autopool',
-							to:settings.email,
-						}
-					},function(_err,body){
-						callback(err)
-					})
+					sendNotification(settings.notification.error,'error:' + url + '/' +branch,stdout,callback)
 				}
 				if(!err && settings.notification.success){
-					request.post({
-						url:settings.notification.success,
-						json:{
-							subject:'node-github-autopool success:' + url + ' ,' + branch,
-							body:stdout,
-							from:'node-github-autopool',
-							to:settings.email
-						}
-					},function(_err,body){
-						callback(err)
-					})
+					sendNotification(settings.notification.url,'success:' + url + '/' +branch,stdout,callback)					
 				}
 			})			
 			return;
 		}
 	}
 	callback(new Error('branch not found in settings'))
+}
+
+function sendNotification(url,subject,body,callback){
+	if(settings.notification.type=='zapier')
+		request.post({
+				url:url,
+				json:{
+					subject:subjcet,
+					body:stdout,
+					from:'node-github-autopool',
+					to:settings.notification.email
+				}
+			},function(_err,body){
+				callback(err)
+			})
+	else if(settings.notification.type=='pushbullet')
+		request.post({
+				url:'https://api.pushbullet.com/v2/pushes',
+				headers:{
+				'Authorization': 'Bearer ' + settings.notification.access_token
+				},
+				json:{
+					"type": "note", 
+					"title": "AutoPool:" + subject,
+					"body":body
+				}
+			},function(err,obj,body){
+			})
 }
