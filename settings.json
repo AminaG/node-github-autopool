@@ -6,14 +6,43 @@
 	"directory":"d:\\rg-dev"
 	},
 	{
+	"full_name":"AminaG/rg",
+	"branch":"master",
+	"directory":"d:\\rg"
+	},
+	{
 	"full_name":"AminaG/node-github-autopool",
 	"branch":"master",
 	"directory":"c:\\git\\node-github-autopool"
-	}],
+	},
+	{
+	"full_name":"AminaG/proxy-bucket",
+	"branch":"master",
+	"directory":"c:\\git\\proxy-bucket"
+	},
+	{
+	"full_name":"AminaG/remarketing-frontend",
+	"branch":"master",
+	"directory":"d:\\remarketing/frontend/master"
+	},
+	{
+	"full_name":"AminaG/remarketing-backend",
+	"branch":"master",
+	"directory":"d:\\remarketing/backend/master"
+	},
+	{
+	"full_name":"AminaG/myt",
+	"branch":"v2",
+	"directory":"C:\\giftwizard_app\\myt"
+	}
+],
 "notification":{
+	"type":"pushbullet",
+	"access_token":"v1HLTapy6tae3iRw9GyRdMpQ9LOWO2sotBujArGAOCFR6",
 	"success":"https://zapier.com/hooks/catch/bg0hw1/",
-	"error":"https://zapier.com/hooks/catch/bg0hw1/"
+	"error":"https://zapier.com/hooks/catch/bg0hw1/",
+	"email":"aminadavg@gmail.com"
 },
-"email":"aminadavg@gmail.com"
+"port":5968
 }
 
