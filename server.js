@@ -37,10 +37,10 @@ module.exports.branchPushed=function(url,branch,callback){
 			var pool=require('./pool.js')(settings.repositories[i].directory,branch,function(err,stdin,stdout){
 				console.log(new Date(),stdout)
 				if(err && settings.notification.error){
-					sendNotification(settings.notification.error,'error:' + url + '/' +branch,stdout,callback)
+					sendNotification(settings.notification.error,' ERROR:' + url + '/' +branch,stdout,callback)
 				}
 				if(!err && settings.notification.success){
-					sendNotification(settings.notification.url,'success:' + url + '/' +branch,stdout,callback)					
+					sendNotification(settings.notification.url,' SUCCESS:' + url + '/' +branch,stdout,callback)					
 				}
 			})			
 			return;
@@ -70,7 +70,7 @@ function sendNotification(url,subject,body,callback){
 				},
 				json:{
 					"type": "note", 
-					"title": "AutoPool:" + subject,
+					"title": "AP: " + subject,
 					"body":body
 				}
 			},function(err,obj,body){

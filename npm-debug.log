@@ -22,27 +22,27 @@
 8 verbose parsed url   href: '.' }
 9 silly lockFile 3a52ce78- .
 10 verbose lock . C:\Users\Administrator\AppData\Roaming\npm-cache\3a52ce78-.lock
-11 verbose tar pack [ 'C:\\Users\\Administrator\\AppData\\Roaming\\npm-cache\\node-github-autopool\\1.0.1\\package.tgz',
+11 verbose tar pack [ 'C:\\Users\\Administrator\\AppData\\Roaming\\npm-cache\\node-github-autopool\\1.0.3\\package.tgz',
 11 verbose tar pack   '.' ]
-12 verbose tarball C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package.tgz
+12 verbose tarball C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package.tgz
 13 verbose folder .
-14 info prepublish node-github-autopool@1.0.1
+14 info prepublish node-github-autopool@1.0.3
 15 silly lockFile 1f1177db-tar tar://.
 16 verbose lock tar://. C:\Users\Administrator\AppData\Roaming\npm-cache\1f1177db-tar.lock
-17 silly lockFile 2f576f28-ithub-autopool-1-0-1-package-tgz tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package.tgz
-18 verbose lock tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package.tgz C:\Users\Administrator\AppData\Roaming\npm-cache\2f576f28-ithub-autopool-1-0-1-package-tgz.lock
+17 silly lockFile b2836618-ithub-autopool-1-0-3-package-tgz tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package.tgz
+18 verbose lock tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package.tgz C:\Users\Administrator\AppData\Roaming\npm-cache\b2836618-ithub-autopool-1-0-3-package-tgz.lock
 19 silly lockFile 1f1177db-tar tar://.
 20 silly lockFile 1f1177db-tar tar://.
-21 silly lockFile 2f576f28-ithub-autopool-1-0-1-package-tgz tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package.tgz
-22 silly lockFile 2f576f28-ithub-autopool-1-0-1-package-tgz tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package.tgz
-23 silly lockFile ebb1e498-de-github-autopool-1-0-1-package C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package
-24 verbose lock C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package C:\Users\Administrator\AppData\Roaming\npm-cache\ebb1e498-de-github-autopool-1-0-1-package.lock
-25 silly lockFile ebb1e498-de-github-autopool-1-0-1-package C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package
-26 silly lockFile ebb1e498-de-github-autopool-1-0-1-package C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.1\package
+21 silly lockFile b2836618-ithub-autopool-1-0-3-package-tgz tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package.tgz
+22 silly lockFile b2836618-ithub-autopool-1-0-3-package-tgz tar://C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package.tgz
+23 silly lockFile f2d92624-de-github-autopool-1-0-3-package C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package
+24 verbose lock C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package C:\Users\Administrator\AppData\Roaming\npm-cache\f2d92624-de-github-autopool-1-0-3-package.lock
+25 silly lockFile f2d92624-de-github-autopool-1-0-3-package C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package
+26 silly lockFile f2d92624-de-github-autopool-1-0-3-package C:\Users\Administrator\AppData\Roaming\npm-cache\node-github-autopool\1.0.3\package
 27 silly lockFile 3a52ce78- .
 28 silly lockFile 3a52ce78- .
 29 silly publish { name: 'node-github-autopool',
-29 silly publish   version: '1.0.1',
+29 silly publish   version: '1.0.3',
 29 silly publish   description: 'Add a webhook to github. Every push will pull it to your server. We used zapier, to update you by email.',
 29 silly publish   main: 'app.js',
 29 silly publish   dependencies: { express: '^4.13.1', stdio: '^0.2.7' },
@@ -56,38 +56,40 @@
 29 silly publish      start: 'node server.js' },
 29 silly publish   author: '',
 29 silly publish   license: 'ISC',
-29 silly publish   repository: { type: 'git', url: 'https://github.com/npm/npm.git' },
-29 silly publish   readme: '# node-github-autopool\nAdd a webhook to github. Every push will pull it to your server. We used zapier, to update you by email.\n\n1. You just need to create webhook in github to your server.\n2. Just run your server. And it will autopool always\n',
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'https://github.com/AminaG/node-github-autopool' },
+29 silly publish   readme: '# node-github-autopool\nAdd a webhook to github. Every push will pull it to your server. We used zapier, to update you by email.\n\n1. You just need to create webhook in github to your server.\n2. Just run your server. And it will autopool always\n3. You can define it to send you email on success or error (using webhook and zapier)\n\nSettings can configure from settings.json:\n\n    {\n    \t"repositories":\n    \t[{\n    \t"full_name":"AminaG/Webpage-Screenshot",\n    \t"branch":"master",\n    \t"directory":"c:\\\\git\\\\Webpage-Screenshot"\n    \t},\n    \t{\n    \t"full_name":"AminaG/node-github-autopool",\n    \t"branch":"master",\n    \t"directory":"c:\\\\git\\\\node-github-autopool"\n    \t}],\n    "notification":{\n    \t"success":"https://zapier.com/hooks/catch/bg0hw1/",\n    \t"error":"https://zapier.com/hooks/catch/bg0hw1/"\n    },\n    "email":"youremail@gmail.com"\n    }\n',
 29 silly publish   readmeFilename: 'README.md',
-29 silly publish   gitHead: 'cc7509f05dbab1a5a5a158e3d71f51784519ac87',
-29 silly publish   bugs: { url: 'https://github.com/npm/npm/issues' },
-29 silly publish   homepage: 'https://github.com/npm/npm',
-29 silly publish   _id: 'node-github-autopool@1.0.1',
-29 silly publish   _shasum: 'a28200cab6b3f6c1974cc554162435d4eadf93a4',
+29 silly publish   gitHead: 'e2f988fceb7ee3ca60e274d7c55758bfc2455e8a',
+29 silly publish   bugs: { url: 'https://github.com/AminaG/node-github-autopool/issues' },
+29 silly publish   homepage: 'https://github.com/AminaG/node-github-autopool',
+29 silly publish   _id: 'node-github-autopool@1.0.3',
+29 silly publish   _shasum: '0283896e33d0cb194c76cf168e3f0fef697c0194',
 29 silly publish   _from: '.' }
 30 verbose request where is /node-github-autopool
 31 verbose request registry https://registry.npmjs.org/
-32 verbose request id 3566dac80e7fdab5
+32 verbose request id ea1b013d34153873
 33 verbose url raw /node-github-autopool
 34 verbose url resolving [ 'https://registry.npmjs.org/', './node-github-autopool' ]
 35 verbose url resolved https://registry.npmjs.org/node-github-autopool
 36 verbose request where is https://registry.npmjs.org/node-github-autopool
-37 info trying registry request attempt 1 at 02:02:44
+37 info trying registry request attempt 1 at 02:07:53
 38 http PUT https://registry.npmjs.org/node-github-autopool
 39 http 403 https://registry.npmjs.org/node-github-autopool
 40 verbose headers { 'content-type': 'application/json',
 40 verbose headers   'cache-control': 'max-age=60',
 40 verbose headers   'content-length': '95',
 40 verbose headers   'accept-ranges': 'bytes',
-40 verbose headers   date: 'Thu, 09 Jul 2015 23:02:45 GMT',
+40 verbose headers   date: 'Thu, 09 Jul 2015 23:07:55 GMT',
 40 verbose headers   via: '1.1 varnish',
 40 verbose headers   connection: 'keep-alive',
-40 verbose headers   'x-served-by': 'cache-lhr6323-LHR',
+40 verbose headers   'x-served-by': 'cache-lhr6333-LHR',
 40 verbose headers   'x-cache': 'MISS',
 40 verbose headers   'x-cache-hits': '0',
-40 verbose headers   'x-timer': 'S1436482964.663838,VS0,VE664' }
+40 verbose headers   'x-timer': 'S1436483274.369490,VS0,VE660' }
 41 error publish Failed PUT 403
-42 error Error: "You cannot publish over the previously published version 1.0.1." : node-github-autopool
+42 error Error: "You cannot publish over the previously published version 1.0.3." : node-github-autopool
 42 error     at RegClient.<anonymous> (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:308:14)
 42 error     at Request._callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:246:65)
 42 error     at Request.self.callback (C:\Program Files (x86)\nodejs\node_modules\npm\node_modules\request\request.js:236:22)
